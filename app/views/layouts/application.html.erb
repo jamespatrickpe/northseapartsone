@@ -1,0 +1,15 @@
+<!DOCTYPE html><html><head>
+  <title>North Sea Parts - Kumpletong Piesa, Kumpletong Serbisyo</title>
+  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+  <link rel="stylesheet" href="css/foundation.css">
+  <%= csrf_meta_tags %>
+</head><body>
+
+<%= rendercorepartial("topbar"); %>
+
+<%= yield %>
+
+
+<footer><div id="footer" align="center">NORTH SEA PARTS &copy; 2015; last update 12/31/14</div></footer>
+</body></html>

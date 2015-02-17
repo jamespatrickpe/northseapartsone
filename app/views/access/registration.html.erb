@@ -1,0 +1,104 @@
+<%= form_tag({action: :register}, multipart: true, id: "registration_form") do %>
+<div class="row">
+  <h1>Registration</h1>
+  In order to serve you better; we would like to ask more about you and your business. Please fill out the following forms carefully. Read our Privacy Policy for more details.
+
+  <div class="row">
+    <div class="large-6 columns">
+      <h2 class="miniheader">Security Authentication</h2>
+      <%= text_field_tag("username", value = nil, options = {placeholder: "Place a Simple Username 'james'; 3 to 15 Characters", required: "required", pattern: "[a-z0-9_-]{3,15}$"} )%>
+      <%= text_field_tag("password", value = nil, options = {id: "password", placeholder: "Password; 8-15 Characters", required: "required", type: "password" } )%>
+      <%= text_field_tag("password_confirmation", value = nil, options = {id: "password_confirmation", placeholder: "Type Password Again", required: "required", type: "password" } )%>
+      <%= text_field_tag("email", value = nil, options = {id: "email", name: "email",placeholder: "Email", required: "required", type: "email"}) %>
+      <div align="right">
+      Remember me when I'm logged in [ <%= check_box_tag("rememberme", value = "1", checked = false, options = {}) %> ]
+      </div>
+    </div>
+
+    <div class="large-6 columns">
+      <h2 class="miniheader">Personal / Company Details</h2>
+      <%= text_field_tag("name", value = nil, options = {placeholder: "Personal or Company Name", required: "required"}) %>
+      <%= text_area_tag("description", content = "Description", options = {}) %>
+      Upload your picture or company logo:
+      <%= file_field_tag 'picture' %>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="large-4 columns">
+      <h2 class="miniheader">Addresses</h2>
+      <p id="map_special_instructions">
+      Drag red marker; Double Left Click to Zoom Out, Double Right Click to Zoom In. Scroll to Zoom. Hold Left Mouse Button to Pan.
+      </p>
+      <div class="mapcontainer"><div class="mapset" id="primary">
+      <div class="map" style="width: 300px; height: 300px;"></div><br>
+      <%= text_area_tag("Addresses", content = "Type Address Here", options = {class: "map-address",type:"address"}) %>
+      Latitude: <input type="number" class="map-lat" step="any" name="latitude" id="latitude"/>
+      Longitude: <input type="number" class="map-lon" step="any" name="longitude" id="longitude"/> <hr></div>
+      </div>
+
+      <%= renderItemListerButtons("More Addresses:", "addAddress()","deleteAddress()") %>
+
+      <script>
+          $('.map').locationpicker({
+              location: {latitude: 14.621745, longitude: 121.107015},
+              radius: 10,
+              inputBinding: {
+                  latitudeInput: $('.map-lat'),
+                  longitudeInput: $('.map-lon'),
+                  radiusInput: $('.map-radius'),
+                  locationNameInput: $('.map-address')
+              }
+          });
+      </script>
+
+    </div>
+    <div class="large-4 columns">
+      <h2 class="miniheader">Telephony Details</h2>
+
+      <table class="telephonycontainer">
+        <tr>
+          <td>DIGITS</td>
+          <td>DESCRIPTION</td>
+        </tr>
+        <tr id="primary" class="telephonyset">
+          <td> <%= text_field_tag("digits", value = nil, options = {placeholder: "type numbers here", class: "digits", type: "tel", id: 0 }) %></td>
+          <td> <%= text_field_tag("telephony_description", value = nil, options = {placeholder: "eg 'work'", class: "telephony_description" }) %></td>
+        </tr>
+      </table>
+      <hr>
+
+      <%= renderItemListerButtons("More Telephony Details:", "addTelephony()","deleteTelephony()") %>
+    </div>
+    <div class="large-4 columns">
+      <h2 class="miniheader">Digital Contact Details</h2>
+
+      <table class="digitalcontainer">
+        <tr>
+          <td>EMAIL / URL</td>
+          <td>DESCRIPTION</td>
+        </tr>
+        <tr id="primary" class="digitalset">
+          <td> <%= text_field_tag("url", value = nil, options = {placeholder: "email/etc", class: "url", id: 0}) %></td>
+          <td> <%= text_field_tag("digital_description", value = nil, options = {placeholder: "description", class: "digital_description" }) %></td>
+        </tr>
+      </table>
+      <hr>
+
+      <%= renderItemListerButtons("More Digital Contact Details:", "addDigital()","deleteDigital()") %>
+    </div>
+
+    <div class="row" align="center">
+      <hr>
+      <input type="submit" class="large button" href="#" value="REGISTER">
+      <hr>
+    </div>
+
+  </div>
+
+
+
+
+</div>
+
+<% end %>

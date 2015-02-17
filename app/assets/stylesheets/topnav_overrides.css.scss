@@ -1,0 +1,35 @@
+.minifiedlogotext
+{
+    letter-spacing: 3px;
+    color:#008CBA;
+    font-size: 15px;
+    text-wrap:avoid;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.title-area
+{
+  border-right-color:white;
+  border-right-style: solid;
+  border-right-width: thin;
+}
+
+.top-bar
+{
+  padding-left: 3.5%;
+  padding-right: 1.5%;
+  margin-bottom: 2.5%;
+}
+
+#searchbox
+{
+  text-align: center;
+}
+
+body
+{
+  height: auto;
+  background-image:url(tesselate_background.png);
+  background-attachment:fixed;
+}

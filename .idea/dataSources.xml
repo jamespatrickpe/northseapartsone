@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DataSourceManagerImpl" format="xml" hash="568035529">
+    <data-source source="LOCAL" name="Rails northseapartsone: development" uuid="22502e67-9218-4c89-9ab5-92404a3c76de">
+      <driver-ref>mysql</driver-ref>
+      <jdbc-driver>com.mysql.jdbc.Driver</jdbc-driver>
+      <jdbc-url>jdbc:mysql://127.0.0.1/northseapartsone_development</jdbc-url>
+      <user-name>root</user-name>
+      <user-password>dfe4dfc5dfdedfc2dfc3dfc4dfcddf9bdf8b</user-password>
+      <libraries />
+    </data-source>
+    <data-source source="LOCAL" name="Rails northseapartsone: test" uuid="50b65bd2-686b-4111-b429-6642025c950d">
+      <driver-ref>mysql</driver-ref>
+      <jdbc-driver>com.mysql.jdbc.Driver</jdbc-driver>
+      <jdbc-url>jdbc:mysql://127.0.0.1/northseapartsone_test</jdbc-url>
+      <user-name>root</user-name>
+      <libraries />
+    </data-source>
+    <data-source source="LOCAL" name="Rails northseapartsone: production" uuid="2835fcad-e29e-45ab-b812-9cb1407a33d2">
+      <driver-ref>mysql</driver-ref>
+      <jdbc-driver>com.mysql.jdbc.Driver</jdbc-driver>
+      <jdbc-url>jdbc:mysql://127.0.0.1/northseapartsone_production</jdbc-url>
+      <user-name>root</user-name>
+      <libraries />
+    </data-source>
+  </component>
+</project>
+
